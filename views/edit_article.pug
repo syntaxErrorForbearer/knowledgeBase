@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 #{title}
+  form(method='POST', action='/articles/edit/'+article._id)
+      #form-group
+        label Title:
+        br
+        input.form-countrol(name='title', type='text' value=article.title)
+      #form-group
+        label Author:
+        br
+        input.form-countrol(name='author', type='text' value=article.author)
+      #form-group
+        label Body:
+        br
+        textarea.form-countrol(name='body')= article.body
+      br
+      input.btn.btn-primary(type='submit', value='Submit')
+      
